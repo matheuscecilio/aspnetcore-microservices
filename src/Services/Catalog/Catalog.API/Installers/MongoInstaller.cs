@@ -13,7 +13,7 @@ namespace Catalog.API.Installers
         )
         {
             var connectionString = configuration.GetSection("MongoDbSettings:ConnectionString").Value;
-            var database = configuration.GetSection("MongoDbSettings:DatabaseName").Value;
+            var database = configuration.GetSection("MongoDbSettings:Database").Value;
 
             services.Configure<MongoOptions>(config =>
             {
