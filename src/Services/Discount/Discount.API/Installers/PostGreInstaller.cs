@@ -4,9 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Discount.API.Installers
 {
-    public static class PostGreeInstaller
+    public static class PostGreInstaller
     {
-        public static void InstallPostGree(
+        public static void InstallPostGre(
             this IServiceCollection services,
             IConfiguration configuration
         )
