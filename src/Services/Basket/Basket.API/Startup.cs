@@ -22,6 +22,7 @@ namespace Basket.API
         {
             services.InstallRedis(Configuration);
             services.InstallRepositories();
+            services.InstallGrpc();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
