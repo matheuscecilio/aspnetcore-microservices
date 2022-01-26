@@ -1,16 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Ordering.Application.Installers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Ordering.Infrasructure.Installers;
 
 namespace Ordering.API
 {
@@ -27,6 +22,8 @@ namespace Ordering.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.InstallApplicationServices();
+            services.InstallInsfrastructureServices(Configuration);
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

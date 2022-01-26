@@ -24,7 +24,7 @@ namespace Ordering.API.Controllers
         }
 
         [HttpGet("{userName}", Name = "GetOrder")]
-        [ProducesResponseType(typeof(IEnumerable<OrdersDto>), (int)HttpStatusCode.OK))]
+        [ProducesResponseType(typeof(IEnumerable<OrdersDto>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<OrdersDto>>> GetOrdersByUserName(string userName)
         {
             var query = new GetOrdersListQuery(userName);
