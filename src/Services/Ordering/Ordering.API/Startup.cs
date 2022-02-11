@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Ordering.API.Installers;
 using Ordering.Application.Installers;
 using Ordering.Infrasructure.Installers;
 
@@ -23,6 +24,9 @@ namespace Ordering.API
         {
             services.InstallApplicationServices();
             services.InstallInsfrastructureServices(Configuration);
+            services.InstallMassTransit(Configuration);
+            services.InstallAutoMapper();
+            services.InstallConsumers();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
