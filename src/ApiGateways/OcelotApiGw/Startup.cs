@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Ocelot.Middleware;
 using OcelotApiGw.Installers;
+using System.Threading.Tasks;
 
 namespace OcelotApiGw
 {
@@ -35,7 +36,7 @@ namespace OcelotApiGw
                 });
             });
 
-            await app.UseOcelot();
-        }
+            await app.ConfigureOcelot();
+        }        
     }
 }
